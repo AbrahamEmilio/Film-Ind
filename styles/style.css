@@ -1,0 +1,151 @@
+:root{
+    --white-color: #F5F6F8;
+    --principal-color:  #03093E;
+    --secondary-color: #A9BEBE;
+    --third-color: #F0C56B;
+
+    --font-roboto:  'Roboto', sans-serif;
+    --light: 300;
+    --medium: 400;
+    --bold: 700;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.inactive{
+    display: none;
+}
+
+.header{
+    width: 100%;
+    padding: 10px 0;
+    background-color: var(--principal-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header__form-input{
+    width: 350px;
+    border-radius: 50px 0px 0px 50px;
+    height: 30px;
+    border: none;
+    padding: 0px 15px;
+}
+
+.header__form-button{
+    height: 30px;
+    border-radius: 0px 50px 50px 0px;
+    width: 70px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--third-color);
+    font-family: var(--font-roboto);
+    font-weight: var(--medium);
+}
+
+.header__button{
+    color: var(--white-color);
+    font-family: var(--font-roboto);
+    font-weight: var(--light);
+    text-decoration: none;
+}
+
+.logotype{
+    font-family: var(--font-roboto);
+    font-weight: var(--bold);
+    color: var(--white-color);
+    font-size: 25px;
+}
+
+.header__menu{
+    display: flex;
+    list-style: none;
+    color: var(--white-color);
+    gap: 20px;
+}
+
+.genders{
+    padding: 10px 30px;
+    text-align: center;
+}
+
+.genders__container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0px;
+}
+
+.gender__container{
+    padding: 2px 15px;
+    text-align: center;
+    border-radius: 50px;
+    font-family: var(--font-roboto);
+    border: 1px solid var(--principal-color);
+    cursor: pointer;
+}
+
+.gender__container:hover{
+    background-color: var(--secondary-color);
+}
+
+.gender__container-text{
+    color: var(--principal-color);
+    font-weight: var(--medium);
+    font-size: 15px;
+}
+
+.popular{
+    padding: 50px 0px;
+    text-align: center;
+}
+
+.popular__title{
+    font-family: var(--font-roboto);
+    color: var(--white-color);
+    margin-bottom: 30px;
+}
+
+.populars__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 30px;
+    gap: 30px;
+}
+
+.popular__movie{
+    background-color: var(--principal-color);
+    text-align: start;
+    padding: 0px 0px 10px 0px;
+}
+
+.popular__movie-img{
+    margin: 0px 0px 10px 0px;
+    width: 100%;
+}
+
+.popular__movie-descripcion{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.popular__movie-title{
+    color: var(--third-color);
+    font-size: 20px;
+    font-family: var(--font-roboto);
+}
+
+.popular__movie-text{
+    color: var(--white-color);
+    font-family: var(--font-roboto);
+    font-size: 12px;
+}
