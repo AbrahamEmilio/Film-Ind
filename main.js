@@ -5,23 +5,24 @@ const getGenders = async() => {
     const data = await response.json();
     const gendres = data.genres;
     gendres.forEach((e) => {
-    //     <div class="genders__container">
-    //     <!-- <div class="gender__container">
-    //         <h3 class="gender__container-text">Terror</h3>
-    //     </div> -->
-    // </div>
 
     const gendersContainer = document.querySelector('.genders__container');
-    const genderContainer = document.createElement('div')
-    const gender = document.createElement('h3')
+    const genderContainer = document.createElement('div');
+    const gender = document.createElement('h3');
 
-    genderContainer.classList.add('gender__container')
-    gender.classList.add('gender__container-text')
+    genderContainer.classList.add('gender__container');
+    gender.classList.add('gender__container-text');
 
     gender.textContent = e.name;
-    genderContainer.append(gender)
-    gendersContainer.append(genderContainer)
-    })
+    genderContainer.append(gender);
+    gendersContainer.append(genderContainer);
+
+    });
+};
+
+const getPopularMovies = async() => {
+    const response = await fetch('')
+    const data = await response.json();
 }
 
 getGenders();
