@@ -94,6 +94,7 @@
 
 .gender__container:hover{
     background-color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
 }
 
 .gender__container-text{
@@ -103,28 +104,28 @@
 }
 
 .popular{
-    padding: 50px 0px;
+    padding: 20px 0px;
     text-align: center;
 }
 
 .popular__title{
     font-family: var(--font-roboto);
-    color: var(--white-color);
-    margin-bottom: 30px;
+    color: var(--principal-color);
 }
 
-.populars__container{
+.popular__movies-container{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 30px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 30px 30px;
     gap: 30px;
 }
 
 .popular__movie{
     background-color: var(--principal-color);
     text-align: start;
+    width: 15%;
     padding: 0px 0px 10px 0px;
 }
 
@@ -140,12 +141,13 @@
 
 .popular__movie-title{
     color: var(--third-color);
-    font-size: 20px;
+    font-size: 15px;
+    margin-bottom: 10px;
     font-family: var(--font-roboto);
 }
 
 .popular__movie-text{
     color: var(--white-color);
     font-family: var(--font-roboto);
-    font-size: 12px;
+    font-size: 10px;
 }

@@ -21,8 +21,32 @@ const getGenders = async() => {
 };
 
 const getPopularMovies = async() => {
-    const response = await fetch('')
+    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`)
     const data = await response.json();
+    const popularMovies = data.results;
+    popularMovies.forEach((e) => {
+        const popularMoviesContainer = document.querySelector('.popular__movies-container');
+        const popularMovieContainer = document.createElement('div');
+        const popularMovieImg = document.createElement('img')
+        const popularMovieDescripcion = document.createElement('div')
+        const popularMovieTitle = document.createElement('h3')
+        const popularMovieText = document.createElement('p')
+
+        popularMovieContainer.classList.add('popular__movie');
+        popularMovieImg.classList.add('popular__movie-img');
+        popularMovieDescripcion.classList.add('popular__movie-descripcion');
+        popularMovieTitle.classList.add('popular__movie-title')
+        popularMovieText.classList.add('popular__movie-text')
+
+        console.log(e)
+
+        popularMovieTitle.textContent = e.title;
+        popularMovieImg.src = `https://image.tmdb.org/t/p/w300/${e.poster_path}`;
+        popularMovieText.textContent = e.overview;
+
+        popularMovieDescripcion.append(popularMovieTitle, popularMovieText);
+        popularMovieContainer.append(popularMovieImg, popularMovieDescripcion);
+        popularMoviesContainer.append(popularMovieContainer);
+    });
 }
 
-getGenders();
