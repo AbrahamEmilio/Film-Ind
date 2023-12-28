@@ -3,6 +3,7 @@ window.addEventListener('hashchange', navigator, false);
 window.addEventListener('DOMContentLoaded', navigator, false)
 
 function navigator(){
+
     if (location.hash.startsWith('#trends')) {
         trendsPague();
     } else if(location.hash.startsWith('#search=')){
@@ -18,23 +19,45 @@ function navigator(){
 }
 
 function trendsPague(){
-    console.log('trends')
+popularButton.addEventListener('click', () => {
+    popularContainer.classList.remove('popular__movies-container');
+    popularContainer.classList.add('popular__movies-large-container');
+    getPopularMovies();
+});
 }
 
 function searchPague(){
-    console.log('search')
+
 }
 
 function moviePague(){
-    console.log('movie')
+    movieDetails();
+
+    section__movieDetails.classList.remove('inactive');
+    section__popular.classList.add('inactive');
+    section__genders.classList.add('inactive');
+
+    backButton.addEventListener('click', () => {
+        location.hash = 'home';
+    });
 }
 
 function categoryPague(){
-    console.log('category')
+
 }
 
 function homePague(){
-    console.log('home')
+
+    section__movieDetails.classList.add('inactive');
+    section__popular.classList.remove('inactive');
+    section__genders.classList.remove('inactive');
+
+    popularButton.addEventListener('click', () => {
+        popularContainer.classList.remove('popular__movies-container');
+        popularContainer.classList.add('popular__movies-large-container');
+        getPopularMovies();
+    });
+
     getGenders();
     getPopularMovies();
 }

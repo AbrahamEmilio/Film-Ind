@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="./main.js"></script>
     <script defer src="./src/navigation.js"></script>
+    <script defer src="./src/nodes.js"></script>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,16 +33,24 @@
     </header>
 
     <section id="genders" class="genders">
-        <div class="genders__container">
-            <!-- <div class="gender__container">
-                <h3 class="gender__container-text">Terror</h3>
-            </div> -->
-        </div>
+        <div class="genders__container"></div>
     </section>
 
     <section id="popular" class="popular">
         <h2 class="popular__title">Popular Movies</h2>
-        <div class="popular__movies-container"></div>
+        <!-- <div class="popular__movies-container popular__movies-large-container"></div> -->
+    </section>
+
+    <section id="movieDetails" class="movieDetails inactive">
+        <div class="movieDetails__container">
+            <img class="movieDetails__img" src="" alt="">
+            <div class="movieDetails__info">
+                <h2 class="movieDetails__title">Her</h2>
+                <p class="movieDetails__descripcion">descripcion</p>
+                <p class="movieDetails__rate">9.5</p>
+                <img class="back__icon" src="./styles/img/back-icon.png" alt="">
+            </div>
+        </div>
     </section>
 
 </body>

@@ -15,10 +15,6 @@
     padding: 0px;
 }
 
-.inactive{
-    display: none;
-}
-
 .header{
     width: 100%;
     padding: 10px 0;
@@ -108,18 +104,31 @@
     text-align: center;
 }
 
+.popular__large{
+    padding: 20px 0px;
+    text-align: center;
+}
+
 .popular__title{
     font-family: var(--font-roboto);
     color: var(--principal-color);
+    margin-bottom: 30px;
 }
 
 .popular__movies-container{
     display: flex;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
     padding: 30px 30px;
     gap: 30px;
+}
+
+.popular__movies-large-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    padding: 0px;
 }
 
 .popular__movie{
@@ -150,4 +159,65 @@
     color: var(--white-color);
     font-family: var(--font-roboto);
     font-size: 10px;
+}
+
+.movieDetails{
+    width: 100%;
+    padding: 100px 0px;
+    background-color: red;
+}
+
+.movieDetails__container{
+    width: 70%;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--principal-color);
+    display: flex;
+    margin: 0 auto;
+}
+
+.movieDetails__img{
+    width: 35%;
+    border-radius: 10px;
+}
+
+.movieDetails__info{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 20px;
+}
+
+.movieDetails__title{
+    font-family: var(--font-roboto);
+    font-weight: var(--medium);
+    font-size: 25px;
+    color: var(--third-color);
+    margin-bottom: 15px;
+}
+
+.movieDetails__descripcion{
+    font-family: var(--font-roboto);
+    font-weight: var(--light);
+    color: var(--third-color);
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.movieDetails__rate{
+    font-family: var(--font-roboto);
+    font-weight: var(--medium);
+    font-size: 15px;
+    color: var(--third-color)
+}
+
+.back__icon{
+    width: 50px;
+    display: flex;
+    margin-top: 110px;
+    cursor: pointer;
+}
+
+.inactive{
+    display: none;
 }
