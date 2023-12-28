@@ -24,6 +24,7 @@ popularButton.addEventListener('click', () => {
     popularContainer.classList.add('popular__movies-large-container');
     getPopularMovies();
 });
+
 }
 
 function searchPague(){
@@ -43,7 +44,8 @@ function moviePague(){
 }
 
 function categoryPague(){
-
+    
+    
 }
 
 function homePague(){
@@ -60,4 +62,11 @@ function homePague(){
 
     getGenders();
     getPopularMovies();
+}
+
+function logoButton (){
+    const logoButton = document.querySelector('.logotype');
+    logoButton.addEventListener('click', ()=>{
+        location.hash = 'home'
+    })
 }

@@ -3,8 +3,8 @@ const API_KEY = '59d62911c231ed050d12674f6c45bdff';
 const getGenders = async() => {
     const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`)
     const data = await response.json();
-    const gendres = data.genres;
-    gendres.forEach((e) => {
+    const genders = data.genres;
+    genders.forEach((e) => {
 
     const gendersContainer = document.querySelector('.genders__container');
     const genderContainer = document.createElement('div');
@@ -17,7 +17,12 @@ const getGenders = async() => {
     genderContainer.append(gender);
     gendersContainer.append(genderContainer);
 
+    genderContainer.addEventListener('click', () => {
+        location.hash = `category=${e.id}-${e.name}`
+    })
+
     });
+    getMoviesByCategory();
 };
 
 const getPopularMovies = async() => {
@@ -50,7 +55,7 @@ const getPopularMovies = async() => {
 
         }
     } else {
-
+        popularContainer.innerHTML = ''; //ESTA LINEA NOS AYUDA A VACIAN EL CONTAINER PARA QUE NO SE REPITAN LOS ELEMENTOS
         popularMovies.forEach((e) => {
             const popularMovieContainer = document.createElement('div');
             const popularMovieImg = document.createElement('img')
@@ -98,4 +103,10 @@ const movieDetails = async() => {
     movieDetails__rate.textContent = popularMovie.vote_average;
 
     console.log(popularMovie);
+}
+
+const getMoviesByCategory = async() => {
+    const response = await fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=13,9648?api_key=${API_KEY}`);
+    const data = await response.json();
+    console.log(data);
 }
