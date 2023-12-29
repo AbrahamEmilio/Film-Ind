@@ -4,9 +4,9 @@ const getGenders = async() => {
     const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`)
     const data = await response.json();
     const genders = data.genres;
+    gendersContainer.innerHTML = '';
     genders.forEach((e) => {
 
-    const gendersContainer = document.querySelector('.genders__container');
     const genderContainer = document.createElement('div');
     const gender = document.createElement('h3');
 
@@ -30,6 +30,7 @@ const getPopularMovies = async() => {
     const data = await response.json();
     const popularMovies = data.results;
     
+    popularContainer.innerHTML = ''; //ESTA LINEA NOS AYUDA A VACIAN EL CONTAINER PARA QUE NO SE REPITAN LOS ELEMENTOS
     if(popularContainer.getAttribute('class') === 'popular__movies-container'){
         for(let i = 0; i <= 4; i++){
 
@@ -55,7 +56,6 @@ const getPopularMovies = async() => {
 
         }
     } else {
-        popularContainer.innerHTML = ''; //ESTA LINEA NOS AYUDA A VACIAN EL CONTAINER PARA QUE NO SE REPITAN LOS ELEMENTOS
         popularMovies.forEach((e) => {
             const popularMovieContainer = document.createElement('div');
             const popularMovieImg = document.createElement('img')
@@ -102,11 +102,20 @@ const movieDetails = async() => {
     const movieDetails__rate = document.querySelector('.movieDetails__rate');
     movieDetails__rate.textContent = popularMovie.vote_average;
 
-    console.log(popularMovie);
 }
 
-const getMoviesByCategory = async() => {
-    const response = await fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=13,9648?api_key=${API_KEY}`);
+const getMoviesByCategory = async(id) => {
+    const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${id}`);
     const data = await response.json();
-    console.log(data);
-}
+    const peliculas = data.results;
+    gendersMoviesContainer.innerHTML = '';
+    peliculas.forEach((e) =>{
+        const movieCategoryContainer = document.createElement('div');
+        const movieCategoryImg = document.createElement('img');
+        
+        movieCategoryImg.src = `https://image.tmdb.org/t/p/w200/${e.poster_path}`;
+
+        movieCategoryContainer.append(movieCategoryImg);
+        gendersMoviesContainer.append(movieCategoryContainer);
+    });
+};

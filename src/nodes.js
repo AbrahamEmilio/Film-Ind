@@ -8,6 +8,10 @@ popular.append(popularContainer, popularButton);
 
 const section__movieDetails = document.querySelector('.movieDetails');
 const section__popular = document.querySelector('.popular');
-const section__genders = document.querySelector('.genders');
 
-const backButton = document.querySelector('.back__icon')
+const gendersContainer = document.querySelector('.genders__container');
+const gendersView = document.querySelector('.genders__view');
+
+const backButton = document.querySelector('.back__icon');
+
+const gendersMoviesContainer = document.querySelector('.genders__movies-container');

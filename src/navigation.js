@@ -10,7 +10,7 @@ function navigator(){
         searchPague();
     } else if(location.hash.startsWith('#movie')){
         moviePague();
-    } else if(location.hash.startsWith('#category')){
+    } else if(location.hash.startsWith('#category=')){
         categoryPague();
     } else {
         homePague();
@@ -44,15 +44,27 @@ function moviePague(){
 }
 
 function categoryPague(){
-    
-    
+
+    section__movieDetails.classList.add('inactive');
+    section__popular.classList.add('inactive');
+    gendersContainer.classList.remove('inactive');
+    gendersView.classList.remove('inactive');
+
+    const [_, categoryData] = location.hash.split('='); //CONVERTIMOS EN ARRAY EL URL (STRING) Y LO DESESTRUCTURAMOS 
+    const [categoryId, categoryName] = categoryData.split('-')
+
+    const categoryTitle = document.querySelector('.genders__view-title')
+    categoryTitle.textContent = categoryName;
+    getGenders();
+    getMoviesByCategory(categoryId);
 }
 
 function homePague(){
 
     section__movieDetails.classList.add('inactive');
     section__popular.classList.remove('inactive');
-    section__genders.classList.remove('inactive');
+    gendersContainer.classList.remove('inactive');
+    gendersView.classList.add('inactive');
 
     popularButton.addEventListener('click', () => {
         popularContainer.classList.remove('popular__movies-container');
