@@ -19,11 +19,15 @@ function navigator(){
 }
 
 function trendsPague(){
-popularButton.addEventListener('click', () => {
+    popularButton.addEventListener('click', () => {
     popularContainer.classList.remove('popular__movies-container');
     popularContainer.classList.add('popular__movies-large-container');
+
     getPopularMovies();
 });
+
+    backButton.classList.remove('inactive');
+    backButtonFun();
 
 }
 
@@ -37,10 +41,6 @@ function moviePague(){
     section__movieDetails.classList.remove('inactive');
     section__popular.classList.add('inactive');
     section__genders.classList.add('inactive');
-
-    backButton.addEventListener('click', () => {
-        location.hash = 'home';
-    });
 }
 
 function categoryPague(){
@@ -49,14 +49,19 @@ function categoryPague(){
     section__popular.classList.add('inactive');
     gendersContainer.classList.remove('inactive');
     gendersView.classList.remove('inactive');
+    backButton.classList.remove('inactive')
 
     const [_, categoryData] = location.hash.split('='); //CONVERTIMOS EN ARRAY EL URL (STRING) Y LO DESESTRUCTURAMOS 
     const [categoryId, categoryName] = categoryData.split('-')
 
     const categoryTitle = document.querySelector('.genders__view-title')
     categoryTitle.textContent = categoryName;
+
     getGenders();
     getMoviesByCategory(categoryId);
+    backButtonFun();
+
+
 }
 
 function homePague(){
@@ -65,10 +70,12 @@ function homePague(){
     section__popular.classList.remove('inactive');
     gendersContainer.classList.remove('inactive');
     gendersView.classList.add('inactive');
+    backButton.classList.add('inactive')
 
     popularButton.addEventListener('click', () => {
         popularContainer.classList.remove('popular__movies-container');
         popularContainer.classList.add('popular__movies-large-container');
+        location.hash = 'trends';
         getPopularMovies();
     });
 

@@ -23,6 +23,7 @@ const getGenders = async() => {
 
     });
     getMoviesByCategory();
+
 };
 
 const getPopularMovies = async() => {
@@ -79,8 +80,8 @@ const getPopularMovies = async() => {
 
             popularButton.classList.add('inactive');
 
-        })
-    }
+        });
+    };
 }
 
 const movieDetails = async() => {
@@ -119,3 +120,9 @@ const getMoviesByCategory = async(id) => {
         gendersMoviesContainer.append(movieCategoryContainer);
     });
 };
+
+const backButtonFun = () => {
+        backButton.addEventListener('click', ( )=> {
+            location.hash = 'home';
+        })
+}

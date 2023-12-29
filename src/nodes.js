@@ -12,6 +12,5 @@ const section__popular = document.querySelector('.popular');
 const gendersContainer = document.querySelector('.genders__container');
 const gendersView = document.querySelector('.genders__view');
 
-const backButton = document.querySelector('.back__icon');
-
 const gendersMoviesContainer = document.querySelector('.genders__movies-container');
+const backButton = document.querySelector('.backButton')
