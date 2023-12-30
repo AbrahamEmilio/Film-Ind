@@ -71,12 +71,14 @@
 
 .genders__container{
     display: flex;
+    width: 60%;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding: 10px 0px;
+    margin: 0 auto;
+    padding: 30px 0px;
 }
 
 .gender__container{
@@ -100,8 +102,9 @@
 }
 
 .genders__view{
-    width: 100%;
+    width: 80%;
     padding: 50px 0px;
+    margin: 0 auto;
 }
 
 .genders__view-title{

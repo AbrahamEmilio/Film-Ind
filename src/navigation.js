@@ -19,16 +19,19 @@ function navigator(){
 }
 
 function trendsPague(){
-    popularButton.addEventListener('click', () => {
+
     popularContainer.classList.remove('popular__movies-container');
     popularContainer.classList.add('popular__movies-large-container');
+    gendersContainer.classList.add('inactive');
+    gendersView.classList.add('inactive');
+
+    if(popularContainer.getAttribute('class') === 'popular__movies-large-container'){
+        backButton.classList.remove('inactvie')
+    }
 
     getPopularMovies();
-});
-
-    backButton.classList.remove('inactive');
     backButtonFun();
-
+    logoButtonFun();
 }
 
 function searchPague(){
@@ -36,11 +39,12 @@ function searchPague(){
 }
 
 function moviePague(){
-    movieDetails();
 
     section__movieDetails.classList.remove('inactive');
     section__popular.classList.add('inactive');
     section__genders.classList.add('inactive');
+
+    movieDetails();
 }
 
 function categoryPague(){
@@ -61,7 +65,6 @@ function categoryPague(){
     getMoviesByCategory(categoryId);
     backButtonFun();
 
-
 }
 
 function homePague(){
@@ -71,21 +74,23 @@ function homePague(){
     gendersContainer.classList.remove('inactive');
     gendersView.classList.add('inactive');
     backButton.classList.add('inactive')
+    popularContainer.classList.add('popular__movies-container')
 
     popularButton.addEventListener('click', () => {
         popularContainer.classList.remove('popular__movies-container');
         popularContainer.classList.add('popular__movies-large-container');
+        backButton.classList.remove('inactvie')
         location.hash = 'trends';
-        getPopularMovies();
     });
 
     getGenders();
     getPopularMovies();
 }
 
-function logoButton (){
-    const logoButton = document.querySelector('.logotype');
-    logoButton.addEventListener('click', ()=>{
-        location.hash = 'home'
-    })
-}
+function logoButtonFun (){
+
+    logoButton.addEventListener('click', () => {
+        location.hash = 'home';
+    });
+
+};

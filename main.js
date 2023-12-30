@@ -32,7 +32,9 @@ const getPopularMovies = async() => {
     const popularMovies = data.results;
     
     popularContainer.innerHTML = ''; //ESTA LINEA NOS AYUDA A VACIAN EL CONTAINER PARA QUE NO SE REPITAN LOS ELEMENTOS
+    
     if(popularContainer.getAttribute('class') === 'popular__movies-container'){
+
         for(let i = 0; i <= 4; i++){
 
             const popularMovieContainer = document.createElement('div');
@@ -56,7 +58,9 @@ const getPopularMovies = async() => {
             popularContainer.append(popularMovieContainer);
 
         }
+
     } else {
+
         popularMovies.forEach((e) => {
             const popularMovieContainer = document.createElement('div');
             const popularMovieImg = document.createElement('img')
@@ -122,7 +126,9 @@ const getMoviesByCategory = async(id) => {
 };
 
 const backButtonFun = () => {
+
         backButton.addEventListener('click', ( )=> {
             location.hash = 'home';
-        })
+        });
+
 }

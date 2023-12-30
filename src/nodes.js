@@ -1,3 +1,5 @@
+const logoButton = document.querySelector('.logotype');
+
 const popularContainer = document.createElement('div');
 const popularButton = document.createElement('button');
 popularButton.textContent = 'See more';
@@ -13,4 +15,6 @@ const gendersContainer = document.querySelector('.genders__container');
 const gendersView = document.querySelector('.genders__view');
 
 const gendersMoviesContainer = document.querySelector('.genders__movies-container');
-const backButton = document.querySelector('.backButton')
+
+const backButton = document.querySelector('.back__button');
+const backIcon = document.querySelector('.back__icon');
