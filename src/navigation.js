@@ -44,9 +44,9 @@ function moviePague(){
 
     section__movieDetails.classList.remove('inactive');
     backButton.classList.remove('inactive');
-    gendersView.classList.remove('inactive');
-    gendersContainer.classList.remove('inactive');
-
+    
+    gendersView.classList.add('inactive');
+    gendersContainer.classList.add('inactive');
     section__popular.classList.add('inactive');
 
     movieDetails();

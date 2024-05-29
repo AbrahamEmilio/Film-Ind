@@ -41,7 +41,7 @@ const getGenders = async() => {
     })
 
     });
-    getMoviesByCategory();
+    getMoviesByCategory(id);
 
 };
 
@@ -54,7 +54,7 @@ const getPopularMovies = async() => {
     
     if(popularContainer.getAttribute('class') === 'popular__movies-container'){
 
-        for(let i = 0; i <= 4; i++){
+        for(let i = 0; i <= 8; i++){
 
             const popularMovieContainer = document.createElement('div');
             const popularMovieImg = document.createElement('img')
@@ -75,6 +75,10 @@ const getPopularMovies = async() => {
             popularMovieDescripcion.append(popularMovieTitle, popularMovieText);
             popularMovieContainer.append(popularMovieImg, popularMovieDescripcion);
             popularContainer.append(popularMovieContainer);
+
+            popularMovieContainer.addEventListener('click', ()=>{
+                movieDetails(i)
+            })
 
         }
 
@@ -107,10 +111,12 @@ const getPopularMovies = async() => {
     };
 }
 
-const movieDetails = async() => {
-    const { data } = await api(`movie/popular`)
+const movieDetails = async(i) => {
 
-    const popularMovie = data.results[0];
+    const {data} = await api('movie/popular')
+    const popularMovie = data.results[i];
+
+    console.log(popularMovie)
 
     section__movieDetails.style.backgroundImage = 'url(`https://image.tmdb.org/t/p/w300/${popularMovie.poster_path}`)';
 
@@ -125,6 +131,8 @@ const movieDetails = async() => {
 
     const movieDetails__rate = document.querySelector('.movieDetails__rate');
     movieDetails__rate.textContent = popularMovie.vote_average;
+
+    moviePague()
 
 }
 

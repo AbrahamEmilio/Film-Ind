@@ -210,22 +210,24 @@
 
 .movieDetails{
     width: 100%;
-    padding: 100px 0px;
+    padding: 0px 0px 100px 0px;
 
 }
 
 .movieDetails__container{
-    width: 50%;
+    width: 40%;
     height: 500px;
     padding: 10px;
     border-radius: 20px;
     background-color: var(--principal-color);
     display: flex;
+    justify-content: center;
     margin: 0 auto;
 }
 
 .movieDetails__img{
-    width: 35%;
+    width: 300px;
+    height: auto;
     border-radius: 10px;
 }
 
@@ -278,6 +280,7 @@
     font-family: var(--font-roboto);
     font-size: 30px;
     color: var(--third-color);
+    cursor: pointer;
 }
 
 .inactive{
