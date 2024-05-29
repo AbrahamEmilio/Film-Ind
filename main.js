@@ -1,8 +1,27 @@
-const API_KEY = '59d62911c231ed050d12674f6c45bdff';
+//Creamos una instancia de axios (Axios es una herramienta que nos hace reducir el codigo a la hora de consumir un API)
+const api = axios.create({
+    baseURL: 'https://api.themoviedb.org/3/', //Agregamos la parte de la url api que nunca cambiara para asi reutilizarla con axios
+    headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+    },
+    params: {
+        'api_key': API_KEY,
+    },
+});
+
+async function getTrendingMoviesPreview(){
+    const { data } = await api(`trending/movie/day`);
+    // const data = await response.json(); Con axios no es necesario parsear la respuesta, ya que el ya lo hace por nosotros
+
+    const movies = data.results;
+    console.log(movies)
+}
+
+getTrendingMoviesPreview()
 
 const getGenders = async() => {
-    const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`)
-    const data = await response.json();
+    const { data } = await api(`genre/movie/list`)
+
     const genders = data.genres;
     gendersContainer.innerHTML = '';
     genders.forEach((e) => {
@@ -27,8 +46,8 @@ const getGenders = async() => {
 };
 
 const getPopularMovies = async() => {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`)
-    const data = await response.json();
+    const { data } = await api(`movie/popular`)
+
     const popularMovies = data.results;
     
     popularContainer.innerHTML = ''; //ESTA LINEA NOS AYUDA A VACIAN EL CONTAINER PARA QUE NO SE REPITAN LOS ELEMENTOS
@@ -89,8 +108,8 @@ const getPopularMovies = async() => {
 }
 
 const movieDetails = async() => {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`)
-    const data = await response.json()
+    const { data } = await api(`movie/popular`)
+
     const popularMovie = data.results[0];
 
     section__movieDetails.style.backgroundImage = 'url(`https://image.tmdb.org/t/p/w300/${popularMovie.poster_path}`)';
@@ -112,6 +131,7 @@ const movieDetails = async() => {
 const getMoviesByCategory = async(id) => {
     const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${id}`);
     const data = await response.json();
+    
     const peliculas = data.results;
     gendersMoviesContainer.innerHTML = '';
     peliculas.forEach((e) =>{

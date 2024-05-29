@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/AbrahamEmilio/Film-Ind/issues"
   },
-  "homepage": "https://github.com/AbrahamEmilio/Film-Ind#readme"
+  "homepage": "https://github.com/AbrahamEmilio/Film-Ind#readme",
+  "dependencies": {
+    "axios": "^1.7.2"
+  }
 }

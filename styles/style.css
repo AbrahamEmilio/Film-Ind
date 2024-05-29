@@ -136,6 +136,8 @@
     font-family: var(--font-roboto);
     color: var(--principal-color);
     margin-bottom: 30px;
+    font-size: 40px;
+    font-weight: var(--bold);
 }
 
 .popular__movies-container{
@@ -168,7 +170,7 @@
 }
 
 .popular__movie-descripcion{
-    width: 90%;
+    padding: 10px 20px;
     margin: 0 auto;
 }
 
@@ -177,12 +179,14 @@
     font-size: 15px;
     margin-bottom: 10px;
     font-family: var(--font-roboto);
+    text-align: center;
 }
 
 .popular__movie-text{
     color: var(--white-color);
     font-family: var(--font-roboto);
     font-size: 10px;
+    text-align: justify;
 }
 
 .popularButton{
