@@ -21,13 +21,14 @@ function navigator(){
 function trendsPague(){
 
     popularContainer.classList.remove('popular__movies-container');
-    
+    backButton.classList.remove('inactvie')
+
     popularContainer.classList.add('popular__movies-large-container');
     gendersContainer.classList.add('inactive');
     gendersView.classList.add('inactive');
 
     if(popularContainer.getAttribute('class') === 'popular__movies-large-container'){
-        backButton.classList.remove('inactvie')
+        backButton.classList.remove('inactive')
     }
 
     getPopularMovies();
@@ -42,11 +43,14 @@ function searchPague(){
 function moviePague(){
 
     section__movieDetails.classList.remove('inactive');
+    backButton.classList.remove('inactive');
+    gendersView.classList.remove('inactive');
+    gendersContainer.classList.remove('inactive');
 
     section__popular.classList.add('inactive');
-    section__genders.classList.add('inactive');
 
     movieDetails();
+    backButtonFun();
 }
 
 function categoryPague(){
@@ -74,17 +78,18 @@ function homePague(){
 
     section__popular.classList.remove('inactive');
     gendersContainer.classList.remove('inactive');
+    popularButton.classList.remove('inactive')
 
     section__movieDetails.classList.add('inactive');
     gendersView.classList.add('inactive');
     backButton.classList.add('inactive');
     popularContainer.classList.add('popular__movies-container');
+    popularContainer.classList.remove('popular__movies-large-container');
+
 
     popularButton.addEventListener('click', () => {
 
-        popularContainer.classList.remove('popular__movies-container');
-        popularContainer.classList.add('popular__movies-large-container');
-        backButton.classList.remove('inactvie')
+        // popularContainer.classList.remove('popular__movies-container');
         location.hash = 'trends';
 
     });
