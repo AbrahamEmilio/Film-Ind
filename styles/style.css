@@ -67,11 +67,12 @@
 
 .genders{
     text-align: center;
+    background-color: #E6E9ED;
 }
 
 .genders__container{
     display: flex;
-    width: 60%;
+    width: 80%;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
@@ -82,21 +83,17 @@
 }
 
 .gender__container{
-    padding: 2px 15px;
+    padding: 4px 18px;
     text-align: center;
     border-radius: 50px;
     font-family: var(--font-roboto);
-    border: 1px solid var(--principal-color);
+    border: none;
     cursor: pointer;
-}
-
-.gender__container:hover{
-    background-color: var(--secondary-color);
-    border: 1px solid var(--secondary-color);
+    background-color: var(--principal-color);
 }
 
 .gender__container-text{
-    color: var(--principal-color);
+    color: white;
     font-weight: var(--medium);
     font-size: 15px;
 }
@@ -109,10 +106,10 @@
 
 .genders__view-title{
     font-family: var(--font-roboto);
-    font-weight: var(--medium);
+    font-weight: var(--bold);
     color: var(--principal-color);
     font-size: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .genders__movies-container{
@@ -125,6 +122,7 @@
 .popular{
     padding: 0px 0px 100px 0px;
     text-align: center;
+    background-color: #E6E9ED;
 }
 
 .popular__large{
@@ -142,8 +140,9 @@
 
 .popular__movies-container{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    padding: 50px 30px;
+    padding: 30px 30px;
     gap: 30px;
 }
 
@@ -160,8 +159,13 @@
 .popular__movie{
     background-color: var(--principal-color);
     text-align: start;
-    width: 15%;
+    width: 300px;
     padding: 0px 0px 10px 0px;
+    cursor: pointer;
+}
+
+.popular__movie:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .popular__movie-img{
@@ -172,10 +176,14 @@
 .popular__movie-descripcion{
     padding: 10px 20px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .popular__movie-title{
-    color: var(--third-color);
+    color: white;
     font-size: 15px;
     margin-bottom: 10px;
     font-family: var(--font-roboto);
@@ -187,6 +195,7 @@
     font-family: var(--font-roboto);
     font-size: 10px;
     text-align: justify;
+    margin-bottom: 10px;
 }
 
 .popularButton{
@@ -201,17 +210,29 @@
     cursor: pointer;
 }
 
+.buttonDescription{
+    font-family: var(--font-roboto);
+    font-weight: var(--bold);
+    font-size: 11px;
+    background-color: var(--third-color);
+    color: var(--principal-color);
+    padding: 4px 12px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
 .popularButton:hover{
     background-color: var(--principal-color);
     color: var(--white-color);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-
 .movieDetails{
     width: 100%;
-    padding: 0px 0px 100px 0px;
-
+    padding: 150px 0px 100px 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .movieDetails__container{
@@ -223,6 +244,7 @@
     display: flex;
     justify-content: center;
     margin: 0 auto;
+    box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
 }
 
 .movieDetails__img{
@@ -235,13 +257,13 @@
     display: flex;
     flex-direction: column;
     justify-content: start;
-    padding: 20px;
+    padding: 30px;
 }
 
 .movieDetails__title{
     font-family: var(--font-roboto);
-    font-weight: var(--medium);
-    font-size: 25px;
+    font-weight: var(--bold);
+    font-size: 45px;
     color: var(--third-color);
     margin-bottom: 15px;
 }
@@ -250,14 +272,15 @@
     font-family: var(--font-roboto);
     font-weight: var(--light);
     color: var(--third-color);
-    font-size: 12px;
+    text-align: justify;
+    font-size: 15px;
     margin-bottom: 15px;
 }
 
 .movieDetails__rate{
     font-family: var(--font-roboto);
-    font-weight: var(--medium);
-    font-size: 15px;
+    font-weight: var(--bold);
+    font-size: 20px;
     color: var(--third-color)
 }
 

@@ -32,8 +32,8 @@ function trendsPague(){
     }
 
     getPopularMovies();
-    backButtonFun();
     logoButtonFun();
+    backButtonFun();
 }
 
 function searchPague(){
@@ -71,6 +71,7 @@ function categoryPague(){
     getGenders();
     getMoviesByCategory(categoryId);
     backButtonFun();
+    
 
 }
 
