@@ -53,7 +53,6 @@ async function getMovie (name){
         movieContainer.append(popularMovieContainer);
         popularContainer.append(movieContainer);
 
-
         buttonDescription.addEventListener('click', ()=>{
             popularMovieText.classList.toggle('inactive');
         })
@@ -309,6 +308,10 @@ const movieDetails = async(i) => {
     stars.innerHTML = '';
     stars.classList.add('stars_details')
 
+    backButton__details.addEventListener('click', ( )=> {
+        location.hash = 'home';
+    });
+
     const rate = Math.floor(movie.vote_average);
     createStarsDetails(rate, stars, movieDetails__rate)
 
@@ -343,7 +346,7 @@ function createStars(rate, stars){
     for(let i = 0; i <= rate; i++){
         const star = document.createElement('img');
         star.src = './src/star.png'
-        star.classList.add('star_details')
+        star.classList.add('star')
         stars.append(star)
     }
 }

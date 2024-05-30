@@ -16,5 +16,6 @@ const gendersView = document.querySelector('.genders__view');
 
 const gendersMoviesContainer = document.querySelector('.genders__movies-container');
 
-const backButton = document.querySelector('.back__button');
+const backButton = document.querySelector('#back__button');
 const backIcon = document.querySelector('.back__icon');
+const backButton__details = document.querySelector('#back__button--details');

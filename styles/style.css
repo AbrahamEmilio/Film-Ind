@@ -15,6 +15,10 @@
     padding: 0px;
 }
 
+body{
+    background-color: #E6E9ED;
+}
+
 .star{
     width: 10px;
 }
@@ -49,16 +53,20 @@
     align-items: center;
 }
 
+.form{
+    display: flex;
+}
+
 .header__form-input{
-    width: 350px;
+    width: 450px;
     border-radius: 50px 0px 0px 50px;
-    height: 30px;
+    height: 40px;
     border: none;
-    padding: 0px 15px;
+    padding: 0px 25px;
 }
 
 .header__form-button{
-    height: 30px;
+    height: 40px;
     border-radius: 0px 50px 50px 0px;
     width: 70px;
     border: none;
@@ -123,6 +131,14 @@
     font-size: 15px;
 }
 
+.gender__container:hover{
+    background-color: var(--third-color);
+}
+
+.gender__container:hover .gender__container-text{
+    color: var(--principal-color);
+}
+
 .genders__view{
     width: 80%;
     padding: 50px 0px;
@@ -131,10 +147,10 @@
 
 .genders__view-title{
     font-family: var(--font-roboto);
-    font-weight: var(--bold);
     color: var(--principal-color);
-    font-size: 30px;
-    margin-bottom: 30px;
+    margin: 50px 0px 30px 0px;
+    font-size: 40px;
+    font-weight: var(--bold);
 }
 
 .genders__movies-container{
@@ -158,7 +174,7 @@
 .popular__title{
     font-family: var(--font-roboto);
     color: var(--principal-color);
-    margin-bottom: 30px;
+    margin: 50px 0px 30px 0px;
     font-size: 40px;
     font-weight: var(--bold);
 }
@@ -282,7 +298,20 @@
     display: flex;
     flex-direction: column;
     justify-content: start;
+}
+
+.movieDetails__cont{
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.movieDetails__backButton{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
 }
 
 .movieDetails__title{
@@ -331,6 +360,46 @@
     font-size: 30px;
     color: var(--third-color);
     cursor: pointer;
+}
+
+.footer{
+    background-color: var(--principal-color);
+    width: 100%;
+    height: 150px;
+}
+
+@media(max-width: 540px){
+    .header{
+        flex-direction: column;
+    }
+
+    .header__form-input{
+        width: 250px;
+    }
+
+    .logotype{
+        margin-bottom: 10px;
+    }
+
+    .form{
+        margin-bottom: 20px;
+    }
+
+    .movieDetails__container{
+        flex-direction: column;
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        padding: 30px 0px 0px 0px;
+    }
+
+    .movieDetails{
+        padding: 100px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .inactive{
