@@ -1,19 +1,23 @@
-const logotype = document.querySelector('#logotype')
-const input = document.querySelector('#input')
-const button__input = document.querySelector('#button__input')
+const logotype = document.querySelector('#logotype');
+const input = document.querySelector('#input');
+const button__input = document.querySelector('#button__input');
+const API_KEY = 'c8ceb1f7767b6086e5ee6384382d5ac0';
 
 button__input.addEventListener('click', (e) => {
     e.preventDefault();
-    const name = input.value;
+    const name = input.value.toLowerCase();
     getMovie(name)
 })
 
 async function getMovie (name){
     const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${name}&api_key=${API_KEY}`)
     const data = await response.json();
-    const movies = data;
+    const movies = data.results;
+    popularContainer.innerHTML = '';
     
     movies.forEach((i) => {
+        console.log(i)
+
         const popularMovieContainer = document.createElement('div');
         const popularMovieImg = document.createElement('img')
         const popularMovieDescripcion = document.createElement('div')
@@ -37,7 +41,14 @@ async function getMovie (name){
 
         popularMovieText.classList.add('inactive');
 
-        popularMovieDescripcion.append(popularMovieTitle, popularMovieText, buttonDescription);
+        const stars = document.createElement('div');
+        stars.innerHTML + '';
+        stars.classList.add('stars')
+
+        const rate = Math.floor(i.vote_average);
+        createStars(rate, stars)
+
+        popularMovieDescripcion.append(popularMovieTitle, popularMovieText, buttonDescription, stars);
         popularMovieContainer.append(popularMovieImg, popularMovieDescripcion);
         movieContainer.append(popularMovieContainer);
         popularContainer.append(movieContainer);
@@ -52,6 +63,8 @@ async function getMovie (name){
         })
 
     });
+
+    location.hash = `search`
 
 }
 
@@ -111,7 +124,7 @@ const getPopularMovies = async() => {
     
     if(popularContainer.getAttribute('class') === 'popular__movies-container'){
 
-        for(let i = 0; i < 12; i++){
+        for(let i = 0; i < 5; i++){
 
             const popularMovieContainer = document.createElement('div');
             const popularMovieImg = document.createElement('img');
@@ -120,6 +133,7 @@ const getPopularMovies = async() => {
             const popularMovieText = document.createElement('p');
             const buttonDescription = document.createElement('button');
             const movieContainer = document.createElement('div');
+            const stars = document.createElement('div');
 
             popularMovieContainer.classList.add('popular__movie');
             popularMovieImg.classList.add('popular__movie-img');
@@ -128,6 +142,7 @@ const getPopularMovies = async() => {
             popularMovieText.classList.add('popular__movie-text');
             buttonDescription.classList.add('buttonDescription');
             movieContainer.classList.add('.movieContainer');
+            stars.classList.add('stars')
             
             popularMovieTitle.textContent = popularMovies[i].title;
             popularMovieImg.src = `https://image.tmdb.org/t/p/w300/${popularMovies[i].poster_path}`;
@@ -136,7 +151,12 @@ const getPopularMovies = async() => {
 
             popularMovieText.classList.add('inactive');
 
-            popularMovieDescripcion.append(popularMovieTitle, popularMovieText, buttonDescription);
+            stars.innerHTML + '';
+
+            const rate = Math.floor(popularMovies[i].vote_average);
+            createStars(rate, stars)
+
+            popularMovieDescripcion.append(popularMovieTitle, popularMovieText, buttonDescription, stars);
             popularMovieContainer.append(popularMovieImg, popularMovieDescripcion);
             movieContainer.append(popularMovieContainer);
             popularContainer.append(movieContainer);
@@ -177,7 +197,14 @@ const getPopularMovies = async() => {
 
             popularMovieText.classList.add('inactive');
 
-            popularMovieDescripcion.append(popularMovieTitle, popularMovieText, buttonDescription);
+            const stars = document.createElement('div');
+            stars.innerHTML + '';
+            stars.classList.add('stars')
+
+            const rate = Math.floor(i.vote_average);
+            createStars(rate, stars)
+
+            popularMovieDescripcion.append(popularMovieTitle, popularMovieText, buttonDescription, stars);
             popularMovieContainer.append(popularMovieImg, popularMovieDescripcion);
             movieContainer.append(popularMovieContainer);
             popularContainer.append(movieContainer);
@@ -226,7 +253,14 @@ const getMoviesByCategory = async(id) => {
 
         popularMovieText.classList.add('inactive');
 
-        popularMovieDescripcion.append(popularMovieTitle, popularMovieText, buttonDescription);
+        const stars = document.createElement('div');
+        stars.innerHTML + '';
+        stars.classList.add('stars')
+
+        const rate = Math.floor(i.vote_average);
+        createStars(rate, stars)
+
+        popularMovieDescripcion.append(popularMovieTitle, popularMovieText, buttonDescription, stars);
         popularMovieContainer.append(popularMovieImg, popularMovieDescripcion);
         movieContainer.append(popularMovieContainer);
         gendersMoviesContainer.append(movieContainer);
@@ -269,7 +303,14 @@ const movieDetails = async(i) => {
     movieDetails__descripcion.textContent = movie.overview;
 
     const movieDetails__rate = document.querySelector('.movieDetails__rate');
-    movieDetails__rate.textContent = movie.vote_average;
+
+    const stars = document.createElement('div');
+    movieDetails__rate.innerHTML = '';
+    stars.innerHTML = '';
+    stars.classList.add('stars_details')
+
+    const rate = Math.floor(movie.vote_average);
+    createStarsDetails(rate, stars, movieDetails__rate)
 
     location.hash = 'movie';
     moviePague()
@@ -287,3 +328,22 @@ const backButtonFun = () => {
 logotype.addEventListener('click', ()=>{
     location.hash = 'home';
 })
+
+function createStarsDetails(rate, stars, movieDetails__rate){
+    for(let i = 0; i <= rate; i++){
+        const star = document.createElement('img');
+        star.src = './src/star.png'
+        star.classList.add('star_details')
+        stars.append(star)
+        movieDetails__rate.append(stars)
+    }
+}
+
+function createStars(rate, stars){
+    for(let i = 0; i <= rate; i++){
+        const star = document.createElement('img');
+        star.src = './src/star.png'
+        star.classList.add('star_details')
+        stars.append(star)
+    }
+}
