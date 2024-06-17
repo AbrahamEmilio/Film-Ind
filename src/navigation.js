@@ -6,7 +6,7 @@ function navigator(){
 
     if (location.hash.startsWith('#trends')) {
         trendsPague();
-    } else if(location.hash.startsWith('#search=')){
+    } else if(location.hash.startsWith('#search')){
         searchPague();
     } else if(location.hash.startsWith('#movie')){
         moviePague();
@@ -38,13 +38,17 @@ function trendsPague(){
 
 function searchPague(){
 
+    backButton.classList.remove('inactive');
+    popularButton.classList.add('inactive');
+
+    backButtonFun();
 }
 
 function moviePague(){
 
     section__movieDetails.classList.remove('inactive');
-    backButton.classList.remove('inactive');
     
+    backButton.classList.add('inactive');
     gendersView.classList.add('inactive');
     gendersContainer.classList.add('inactive');
     section__popular.classList.add('inactive');
@@ -92,6 +96,7 @@ function homePague(){
 
         // popularContainer.classList.remove('popular__movies-container');
         location.hash = 'trends';
+        popularButton.classList.add('inactive');
 
     });
 

@@ -17,22 +17,27 @@
 <body>
     <header class="header">
         <p id="logotype" class="logotype">FILM IND</p>
-        <form action="">
+        <form class="form" action="">
             <input id="input" class="header__form-input" type="text" placeholder="Search Movie">
             <button type="submit" id="button__input" class="header__form-button" type="submit">Search</button>
         </form>
-        <ul class="header__menu">
-            <li>
-                <a class="header__button" href="">Home</a>
-            </li>
-            <li>
-                <a class="header__button" href="">Popular</a>
-            </li>
-            <li >
-                <a class="header__button" href="">Genders</a>
-            </li>
-        </ul>
     </header>
+
+    <section id="movieDetails" class="movieDetails inactive">
+        <div class="movieDetails__container">
+            <img class="movieDetails__img" src="" alt="">
+            <div class="movieDetails__cont">
+                <div class="movieDetails__info">
+                    <h2 class="movieDetails__title"></h2>
+                    <p class="movieDetails__descripcion"></p>
+                    <div class="movieDetails__rate"></div>
+                </div>
+                <div id="back__button--details" class="movieDetails__backButton">
+                    <img class="back__icon" src="./styles/img/back-icon.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="back__button" class="back__button">
         <img class="back__icon" src="./styles/img/back-icon.png" alt="">
@@ -51,17 +56,8 @@
         <h2 class="popular__title">POPULAR MOVIES</h2>
         <!-- <div class="popular__movies-container popular__movies-large-container"></div> -->
     </section>
-
-    <section id="movieDetails" class="movieDetails inactive">
-        <div class="movieDetails__container">
-            <img class="movieDetails__img" src="" alt="">
-            <div class="movieDetails__info">
-                <h2 class="movieDetails__title"></h2>
-                <p class="movieDetails__descripcion"></p>
-                <p class="movieDetails__rate"></p>
-            </div>
-        </div>
-    </section>
-
 </body>
+<footer>
+    <div class="footer"></div>
+</footer>
 </html>
