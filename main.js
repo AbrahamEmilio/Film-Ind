@@ -1,6 +1,7 @@
 const logotype = document.querySelector('#logotype')
 const input = document.querySelector('#input')
 const button__input = document.querySelector('#button__input')
+const API_KEY = '59d62911c231ed050d12674f6c45bdff';
 
 button__input.addEventListener('click', (e) => {
     e.preventDefault();
