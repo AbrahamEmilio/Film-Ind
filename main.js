@@ -15,17 +15,19 @@ async function getMovie (name){
     
     movies.forEach((i) => {
         const popularMovieContainer = document.createElement('div');
-        const popularMovieImg = document.createElement('img')
-        const popularMovieDescripcion = document.createElement('div')
-        const popularMovieTitle = document.createElement('h3')
-        const popularMovieText = document.createElement('p')
+        const popularMovieImg = document.createElement('img');
+        const popularMovieDescripcion = document.createElement('div');
+        const popularMovieTitleContainer = document.createElement('div');
+        const popularMovieTitle = document.createElement('h3');
+        const popularMovieText = document.createElement('p');
         const buttonDescription = document.createElement('button');
         const movieContainer = document.createElement('div');
 
         popularMovieContainer.classList.add('popular__movie');
         popularMovieImg.classList.add('popular__movie-img');
         popularMovieDescripcion.classList.add('popular__movie-descripcion');
-        popularMovieTitle.classList.add('popular__movie-title')
+        popularMovieTitle.classList.add('popular__movie-title');
+        popularMovieTitleContainer.classList.add('popular__movie-titleContainer');
         popularMovieText.classList.add('popular__movie-text')
         buttonDescription.classList.add('buttonDescription');
         movieContainer.classList.add('.movieContainer');
@@ -37,7 +39,8 @@ async function getMovie (name){
 
         popularMovieText.classList.add('inactive');
 
-        popularMovieDescripcion.append(popularMovieTitle, popularMovieText, buttonDescription);
+        popularMovieTitleContainer.append(popularMovieTitle)
+        popularMovieDescripcion.append(popularMovieTitleContainer, popularMovieText, buttonDescription);
         popularMovieContainer.append(popularMovieImg, popularMovieDescripcion);
         movieContainer.append(popularMovieContainer);
         popularContainer.append(movieContainer);
@@ -117,6 +120,7 @@ const getPopularMovies = async() => {
             const popularMovieImg = document.createElement('img');
             const popularMovieDescripcion = document.createElement('div');
             const popularMovieTitle = document.createElement('h3');
+            const popularMovieTitleContainer = document.createElement('div');
             const popularMovieText = document.createElement('p');
             const buttonDescription = document.createElement('button');
             const movieContainer = document.createElement('div');
@@ -125,6 +129,7 @@ const getPopularMovies = async() => {
             popularMovieImg.classList.add('popular__movie-img');
             popularMovieDescripcion.classList.add('popular__movie-descripcion');
             popularMovieTitle.classList.add('popular__movie-title');
+            popularMovieTitleContainer.classList.add('popular__movie-titleContainer');
             popularMovieText.classList.add('popular__movie-text');
             buttonDescription.classList.add('buttonDescription');
             movieContainer.classList.add('.movieContainer');
@@ -136,7 +141,8 @@ const getPopularMovies = async() => {
 
             popularMovieText.classList.add('inactive');
 
-            popularMovieDescripcion.append(popularMovieTitle, popularMovieText, buttonDescription);
+            popularMovieTitleContainer.append(popularMovieTitle);
+            popularMovieDescripcion.append(popularMovieTitleContainer, popularMovieText, buttonDescription);
             popularMovieContainer.append(popularMovieImg, popularMovieDescripcion);
             movieContainer.append(popularMovieContainer);
             popularContainer.append(movieContainer);
@@ -158,6 +164,7 @@ const getPopularMovies = async() => {
             const popularMovieImg = document.createElement('img')
             const popularMovieDescripcion = document.createElement('div')
             const popularMovieTitle = document.createElement('h3')
+            const popularMovieTitleContainer = document.createElement('div');
             const popularMovieText = document.createElement('p')
             const buttonDescription = document.createElement('button');
             const movieContainer = document.createElement('div');
@@ -166,6 +173,7 @@ const getPopularMovies = async() => {
             popularMovieImg.classList.add('popular__movie-img');
             popularMovieDescripcion.classList.add('popular__movie-descripcion');
             popularMovieTitle.classList.add('popular__movie-title')
+            popularMovieTitleContainer.classList.add('popular__movie-titleContainer')
             popularMovieText.classList.add('popular__movie-text')
             buttonDescription.classList.add('buttonDescription');
             movieContainer.classList.add('.movieContainer');
@@ -177,7 +185,8 @@ const getPopularMovies = async() => {
 
             popularMovieText.classList.add('inactive');
 
-            popularMovieDescripcion.append(popularMovieTitle, popularMovieText, buttonDescription);
+            popularMovieTitleContainer.append(popularMovieTitle);
+            popularMovieDescripcion.append(popularMovieTitleContainer, popularMovieText, buttonDescription);
             popularMovieContainer.append(popularMovieImg, popularMovieDescripcion);
             movieContainer.append(popularMovieContainer);
             popularContainer.append(movieContainer);
@@ -207,6 +216,7 @@ const getMoviesByCategory = async(id) => {
         const popularMovieImg = document.createElement('img')
         const popularMovieDescripcion = document.createElement('div')
         const popularMovieTitle = document.createElement('h3')
+        const popularMovieTitleContainer = document.createElement('div');
         const popularMovieText = document.createElement('p')
         const buttonDescription = document.createElement('button');
         const movieContainer = document.createElement('div');
@@ -215,6 +225,7 @@ const getMoviesByCategory = async(id) => {
         popularMovieImg.classList.add('popular__movie-img');
         popularMovieDescripcion.classList.add('popular__movie-descripcion');
         popularMovieTitle.classList.add('popular__movie-title')
+        popularMovieTitleContainer.classList.add('popular__movie-titleContainer')
         popularMovieText.classList.add('popular__movie-text')
         buttonDescription.classList.add('buttonDescription');
         movieContainer.classList.add('.movieContainer');
@@ -226,7 +237,8 @@ const getMoviesByCategory = async(id) => {
 
         popularMovieText.classList.add('inactive');
 
-        popularMovieDescripcion.append(popularMovieTitle, popularMovieText, buttonDescription);
+        popularMovieTitleContainer.append(popularMovieTitle);
+        popularMovieDescripcion.append(popularMovieTitleContainer, popularMovieText, buttonDescription);
         popularMovieContainer.append(popularMovieImg, popularMovieDescripcion);
         movieContainer.append(popularMovieContainer);
         gendersMoviesContainer.append(movieContainer);

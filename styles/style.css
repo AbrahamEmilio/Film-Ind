@@ -10,6 +10,10 @@
     --bold: 700;
 }
 
+body{
+    background-color: var(--principal-color);
+}
+
 *{
     margin: 0px;
     padding: 0px;
@@ -67,7 +71,6 @@
 
 .genders{
     text-align: center;
-    background-color: #E6E9ED;
 }
 
 .genders__container{
@@ -89,13 +92,15 @@
     font-family: var(--font-roboto);
     border: none;
     cursor: pointer;
-    background-color: var(--principal-color);
+    background-color: var(--third-color);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .gender__container-text{
     color: white;
-    font-weight: var(--medium);
+    font-weight: var(--bold);
     font-size: 15px;
+    text-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .genders__view{
@@ -120,9 +125,8 @@
 }
 
 .popular{
-    padding: 0px 0px 100px 0px;
+    padding: 100px 0px 100px 0px;
     text-align: center;
-    background-color: #E6E9ED;
 }
 
 .popular__large{
@@ -132,7 +136,7 @@
 
 .popular__title{
     font-family: var(--font-roboto);
-    color: var(--principal-color);
+    color: var(--white-color);
     margin-bottom: 30px;
     font-size: 40px;
     font-weight: var(--bold);
@@ -157,7 +161,7 @@
 }
 
 .popular__movie{
-    background-color: var(--principal-color);
+    background-color: #010418;
     text-align: start;
     width: 300px;
     padding: 0px 0px 10px 0px;
@@ -174,7 +178,7 @@
 }
 
 .popular__movie-descripcion{
-    padding: 10px 20px;
+    padding: 10px 20px 20px 20px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -184,7 +188,7 @@
 
 .popular__movie-title{
     color: white;
-    font-size: 15px;
+    font-size: 25px;
     margin-bottom: 10px;
     font-family: var(--font-roboto);
     text-align: center;
@@ -200,32 +204,29 @@
 
 .popularButton{
     font-family: var(--font-roboto);
-    font-weight: var(--medium);
+    font-weight: var(--bold);
     font-size: 20px;
     background-color: var(--third-color);
-    color: var(--principal-color);
+    color: var(--white-color);
     padding: 5px 15px;
     border: none;
     border-radius: 20px;
     cursor: pointer;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    margin-top: 50px;
 }
 
 .buttonDescription{
     font-family: var(--font-roboto);
     font-weight: var(--bold);
-    font-size: 11px;
+    font-size: 15px;
     background-color: var(--third-color);
-    color: var(--principal-color);
+    color: var(--white-color);
     padding: 4px 12px;
     border: none;
     border-radius: 20px;
     cursor: pointer;
-}
-
-.popularButton:hover{
-    background-color: var(--principal-color);
-    color: var(--white-color);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .movieDetails{
@@ -236,7 +237,7 @@
 }
 
 .movieDetails__container{
-    width: 40%;
+    width: 50%;
     height: 500px;
     padding: 10px;
     border-radius: 20px;
@@ -254,6 +255,7 @@
 }
 
 .movieDetails__info{
+    width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -271,7 +273,7 @@
 .movieDetails__descripcion{
     font-family: var(--font-roboto);
     font-weight: var(--light);
-    color: var(--third-color);
+    color: var(--white-color);
     text-align: justify;
     font-size: 15px;
     margin-bottom: 15px;
@@ -294,18 +296,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
-    margin: 50px auto;
+    width: 100%;
+    margin: 0px auto;
     gap: 30px;
+    background-color: var(--principal-color);
+    padding: 50px 0px;
 }
 
 .back__button--text{
     font-family: var(--font-roboto);
     font-size: 30px;
-    color: var(--third-color);
+    color: var(--white-color);
     cursor: pointer;
 }
 
 .inactive{
     display: none;
+}
+
+.popular__movie-titleContainer{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
